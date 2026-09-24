@@ -1,13 +1,6 @@
-/* Palette
-Cream       #FAF8F2
-White       #FFFFFF
-Yellow      #8FD8C8
-Soft Yellow #F8D978
-Coral       #E9826E
-Dark        #30302C
-Gray        #706E67
-Border      #DDE8E3
-*/
+/* 
+   GLOBAL
+ */
 
 * {
     box-sizing: border-box;
@@ -30,9 +23,10 @@ a {
 }
 
 
-/* =========================
+/* 
+   ALL PAGES
    NAVBAR
-   ========================= */
+*/
 
 .navbar {
     min-height: 78px;
@@ -100,9 +94,10 @@ a {
 }
 
 
-/* =========================
+/* 
+   HOME PAGE
    HERO IMAGE
-   ========================= */
+ */
 
 .hero-image-section {
     position: relative;
@@ -180,19 +175,20 @@ a {
 }
 
 
-/* =========================
+/*  
+   HOME PAGE
    STATISTICS
-   ========================= */
+  */
 
 .statistics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     padding: 42px 8%;
     background-color: #FFFFFF;
     border-bottom: 1px solid #DDE8E3;
 }
 
 .stat {
+    flex: 1;
     text-align: center;
     border-right: 1px solid #DDE8E3;
 }
@@ -203,7 +199,7 @@ a {
 
 .stat h2 {
     margin-bottom: 2px;
-    color: #D5A919;
+    color: #B35A54;
     font-size: 2.2rem;
 }
 
@@ -213,9 +209,9 @@ a {
 }
 
 
-/* =========================
+/* HOME PAGE
    ABOUT TILUP
-   ========================= */
+ */
 
 .about-tilup {
     max-width: 1200px;
@@ -227,7 +223,7 @@ a {
 .section-label {
     margin-bottom: 12px;
     color: #D5A919;
-    font-size: 0.9rem;
+    font-size: 2.4rem;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -247,20 +243,27 @@ a {
 }
 
 
-/* =========================
+/* 
+   HOME PAGE
    FEATURE CARDS
-   ========================= */
+ */
 
 .feature-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 22px;
+    align-items: stretch;
     text-align: left;
 }
 
 .feature-card {
+    flex: 1;
     min-height: 260px;
     padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #FFFFFF;
     border: 1px solid #DDE8E3;
     border-radius: 12px;
@@ -288,7 +291,6 @@ a {
     display: block;
 }
 
-
 .feature-card h3 {
     margin-bottom: 10px;
     color: #30302C;
@@ -304,9 +306,10 @@ a {
 }
 
 
-/* =========================
+/*  
+   ALL PAGES
    FOOTER
-   ========================= */
+  */
 
 footer {
     padding: 30px 8%;
@@ -320,9 +323,10 @@ footer p {
 }
 
 
-/* =========================
+/*  
+   HOME PAGE
    RESPONSIVE
-   ========================= */
+  */
 
 @media (max-width: 1000px) {
 
@@ -336,10 +340,6 @@ footer p {
 
     .hero-text h1 {
         font-size: 4.5rem;
-    }
-
-    .feature-cards {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -377,8 +377,12 @@ footer p {
     }
 
     .statistics {
-        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
         gap: 25px;
+    }
+
+    .stat {
+        flex: 1 1 45%;
     }
 
     .stat:nth-child(2) {
@@ -399,9 +403,11 @@ footer p {
     }
 }
 
-/* =========================
+
+/*  
    WHY LEARN PAGE
-========================= */
+   HERO
+  */
 
 .why-hero {
     min-height: 520px;
@@ -437,7 +443,10 @@ footer p {
 }
 
 
-/* Intro */
+/*  
+   WHY LEARN PAGE
+   BENEFITS
+  */
 
 .why-benefits {
     max-width: 1200px;
@@ -445,12 +454,8 @@ footer p {
     padding: 100px 6% 110px;
 }
 
-
-/* Benefit blocks */
-
 .why-benefit {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 70px;
     align-items: center;
     margin-bottom: 100px;
@@ -470,14 +475,7 @@ footer p {
 
 .why-benefit-text {
     max-width: 520px;
-}
-
-.benefit-number {
-    margin-bottom: 15px;
-    color: #E9826E;
-    font-size: 0.9rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+    flex: 1;
 }
 
 .why-benefit-text h2 {
@@ -505,13 +503,17 @@ footer p {
 }
 
 
-/* Images */
+/*  
+   WHY LEARN PAGE
+   IMAGES
+  */
 
 .why-benefit-image {
     width: 100%;
     height: 400px;
     overflow: hidden;
     border-radius: 12px;
+    flex: 1;
 }
 
 .why-benefit-image img {
@@ -522,7 +524,10 @@ footer p {
 }
 
 
-/* Bottom CTA */
+/*  
+   WHY LEARN PAGE
+   BOTTOM CTA
+  */
 
 .why-cta {
     padding: 100px 8%;
@@ -556,7 +561,10 @@ footer p {
 }
 
 
-/* Responsive */
+/*  
+   WHY LEARN PAGE
+   RESPONSIVE
+  */
 
 @media (max-width: 900px) {
 
@@ -565,7 +573,7 @@ footer p {
     }
 
     .why-benefit {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 35px;
         margin-bottom: 75px;
     }
@@ -585,7 +593,6 @@ footer p {
     .why-benefit-image {
         height: 350px;
     }
-
 }
 
 
@@ -623,29 +630,13 @@ footer p {
     .why-cta-content h2 {
         font-size: 2.4rem;
     }
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   /* =========================
-COURSES
-   ========================= */
-/* =========================
+/*  
    COURSES PAGE
-   ========================= */
+   HERO
+  */
 
 .courses-hero {
     position: relative;
@@ -702,6 +693,7 @@ COURSES
     color: #FFFFFF;
     font-size: 1.2rem;
 }
+
 .courses-heading {
     max-width: 1100px;
     margin: 0 auto 45px;
@@ -723,9 +715,11 @@ COURSES
     line-height: 1.6;
 }
 
-/* =========================
+
+/*  
+   COURSES PAGE
    LANGUAGES
-   ========================= */
+  */
 
 .languages-section {
     max-width: 1500px;
@@ -734,29 +728,37 @@ COURSES
 }
 
 .language-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .language-card {
-    overflow: hidden;
+    flex: 1 1 calc(33.333% - 25px);
+    min-width: 280px;
+
+    position: relative;
+    align-self: flex-start;
+
     background-color: #FFFFFF;
     border: 1px solid #DDE8E3;
     border-radius: 12px;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .language-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     border-color: #E9826E;
-    box-shadow: 0 10px 25px rgba(48, 48, 44, 0.08);
+    box-shadow: 0 10px 25px rgba(48, 48, 44, 0.10);
+    z-index: 10;
 }
 
 .language-image {
     width: 100%;
-    height: 190px;
+    height: 230px;
     overflow: hidden;
+    border-radius: 12px 12px 0 0;
 }
 
 .language-image img {
@@ -766,8 +768,77 @@ COURSES
     display: block;
 }
 
-.language-content {
-    padding: 28px;
+.language-title {
+    padding: 22px 25px;
+    background-color: #FFFFFF;
+    border-radius: 0 0 12px 12px;
+}
+
+.language-title h3 {
+    margin: 0;
+    color: #30302C;
+    font-size: 1.35rem;
+}
+
+.language-info {
+    position: absolute;
+
+    top: calc(100% - 1px);
+    left: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    max-height: 0;
+    overflow: hidden;
+
+    padding: 0 25px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #E9826E;
+    border-top: none;
+
+    border-radius: 0 0 12px 12px;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease,
+        opacity 0.2s ease;
+}
+
+.language-card:hover .language-info {
+    max-height: 250px;
+    padding: 0 25px 25px;
+    opacity: 1;
+}
+
+.language-info .language-level {
+    display: block;
+    margin-bottom: 10px;
+    color: #E9826E;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.language-info p {
+    margin-bottom: 15px;
+    color: #706E67;
+    line-height: 1.5;
+}
+
+.language-info ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #706E67;
+}
+
+.language-info li {
+    margin-bottom: 5px;
 }
 
 .language-level {
@@ -777,32 +848,30 @@ COURSES
     letter-spacing: 1.5px;
 }
 
-.language-content h3 {
-    margin: 8px 0 12px;
-    color: #30302C;
-    font-size: 1.7rem;
+@media (max-width: 1000px) {
+
+    .language-card {
+        flex: 1 1 calc(50% - 25px);
+    }
+
 }
 
-.language-content p {
-    min-height: 75px;
-    margin-bottom: 18px;
-    color: #706E67;
-}
+@media (max-width: 650px) {
 
-.language-content ul {
-    margin: 0;
-    padding-left: 20px;
-    color: #706E67;
-}
+    .language-card {
+        flex: 1 1 100%;
+    }
 
-.language-content li {
-    margin-bottom: 6px;
+    .language-image {
+        height: 250px;
+    }
 }
 
 
-/* =========================
+/*  
+   COURSES PAGE
    COURSE FORMATS
-   ========================= */
+  */
 
 .course-formats {
     padding: 95px 8% 105px;
@@ -812,14 +881,22 @@ COURSES
 .format-grid {
     max-width: 1100px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .format-card {
+    flex: 1 1 calc(25% - 20px);
+
     min-height: 250px;
     padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #FFFFFF;
     border: 1px solid #DDE8E3;
     border-radius: 12px;
@@ -859,10 +936,27 @@ COURSES
     font-size: 0.95rem;
 }
 
+@media (max-width: 1000px) {
 
-/* =========================
+    .format-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .format-card {
+        flex: 1 1 100%;
+    }
+
+}
+
+
+/*  
+   COURSES PAGE
    PREMIUM
-   ========================= */
+  */
 
 .premium-section {
     padding: 90px 8%;
@@ -928,9 +1022,10 @@ COURSES
 }
 
 
-/* =========================
+/*  
+   COURSES PAGE
    COURSE TABLE
-   ========================= */
+  */
 
 .course-comparison {
     max-width: 1200px;
@@ -968,6 +1063,7 @@ td {
 tr:hover td {
     background-color: #FAF8F2;
 }
+
 .plan-header .feature-header {
     background-color: #706E67;
     color: #FFFFFF;
@@ -987,6 +1083,7 @@ tr:hover td {
     background-color: #F2C94C;
     color: #FFFFFF;
 }
+
 .price-row td {
     font-weight: bold;
 }
@@ -1011,25 +1108,22 @@ tr:hover td {
     color: #FFFFFF;
 }
 
-/* =========================
-   COURSES RESPONSIVE
-   ========================= */
+
+/*  
+   COURSES PAGE
+   RESPONSIVE
+  */
 
 @media (max-width: 1000px) {
-
-    .language-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .format-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .courses-hero h1 {
         font-size: 3.8rem;
     }
-}
 
+    .feature-cards {
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 750px) {
 
@@ -1040,14 +1134,6 @@ tr:hover td {
 
     .courses-hero h1 {
         font-size: 3rem;
-    }
-
-    .language-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .format-grid {
-        grid-template-columns: 1fr;
     }
 
     .courses-heading h2 {
@@ -1062,12 +1148,13 @@ tr:hover td {
     .course-comparison {
         padding: 70px 6%;
     }
-    
 }
 
-/* ===================================
+
+/*  
+   BECOME A TUTOR PAGE
    PAGE HERO
-=================================== */
+  */
 
 .page-hero {
     min-height: 520px;
@@ -1106,17 +1193,19 @@ tr:hover td {
     font-size: 1.3rem;
     line-height: 1.6;
 }
-/* ===================================
-   PAGE second
-=================================== */
 
+
+/*  
+   BECOME A TUTOR PAGE
+   SECOND HERO
+  */
 
 .page-herotwo {
     min-height: 520px;
     display: flex;
     align-items: center;
     padding: 80px 8%;
-    background-color: #465954;
+    background-color: #263b35;
     border-bottom: 1px solid #DDE8E3;
 }
 
@@ -1125,7 +1214,7 @@ tr:hover td {
     text-align: left;
 }
 
-.page-hero .section-label {
+.page-herotwo .section-label {
     margin-bottom: 20px;
     color: #8FD8C8;
     font-size: 1.1rem;
@@ -1148,16 +1237,19 @@ tr:hover td {
     font-size: 1.3rem;
     line-height: 1.6;
 }
-/* ===================================
-   PAGE HERO third
-=================================== */
+
+
+/*  
+   BECOME A TUTOR PAGE
+   THIRD HERO
+  */
 
 .page-herothree {
     min-height: 520px;
     display: flex;
     align-items: center;
     padding: 80px 8%;
-    background-color: #B87568;
+    background-color: #8F4542;
     border-bottom: 1px solid #DDE8E3;
 }
 
@@ -1168,8 +1260,8 @@ tr:hover td {
 
 .page-herothree .section-label {
     margin-bottom: 20px;
-    color: #30302C;
-    font-size: 1.1rem;
+    color: #F2C94C;
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 3px;
 }
@@ -1191,12 +1283,13 @@ tr:hover td {
 }
 
 
-/* ===================================
+/*  
+   BECOME A TUTOR PAGE
    REQUIREMENTS
-=================================== */
+  */
 
-.requirements-section{
-    padding:90px 8%;
+.requirements-section {
+    padding: 90px 8%;
 }
 
 .requirements-content {
@@ -1209,51 +1302,53 @@ tr:hover td {
 }
 
 .round-image {
-    width: 500px; 
+    width: 500px;
     height: 500px;
-    max-width: none ;
+    max-width: none;
     object-fit: cover;
     border-radius: 50%;
     display: block;
     border: 3px solid #B87568;
 }
 
-.requirements-list{
-    padding-left:20px;
+.requirements-list {
+    padding-left: 20px;
 }
 
-.requirements-list li{
-    margin-bottom:15px;
-    color:#706E67;
-}
-
-/* ===================================
-   TABLE
-=================================== */
-
-.benefits-table-section{
-    padding:80px 8%;
-    text-align:center;
-}
-
-.benefits-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:40px;
-    background:#FFFFFF;
-    border-radius:12px;
-    overflow:hidden;
+.requirements-list li {
+    margin-bottom: 15px;
+    color: #706E67;
 }
 
 
-.benefits-table td{
-    padding:18px;
-    border-bottom:1px solid #DDE8E3;
+/*  
+   BECOME A TUTOR PAGE
+   BENEFITS TABLE
+  */
+
+.benefits-table-section {
+    padding: 80px 8%;
+    text-align: center;
 }
 
-.benefits-table tr:hover{
-    background:#FAF8F2;
+.benefits-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
 }
+
+.benefits-table td {
+    padding: 18px;
+    border-bottom: 1px solid #DDE8E3;
+}
+
+.benefits-table tr:hover {
+    background: #FAF8F2;
+}
+
 .benefit-header {
     background-color: #F2C94C;
     color: #30302C;
@@ -1269,197 +1364,702 @@ tr:hover td {
     color: #FFFFFF;
 }
 
-/* ===================================
-   FORM
-=================================== */
 
-.tutor-form-section{
-    padding:90px 8%;
-    background:#FFFFFF;
+/* 
+   BECOME A TUTOR PAGE
+   APPLICATION FORM
+ */
+
+
+.tutor-form-section {
+    padding: 90px 8%;
+    background: #FFFFFF;
 }
 
-.tutor-form{
-    margin-top:40px;
+.tutor-form {
+    margin-top: 40px;
 }
 
-.form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.form-group{
-    display:flex;
-    flex-direction:column;
-    margin-bottom:25px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
 }
 
-.form-group label{
-    font-weight:bold;
-    margin-bottom:8px;
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .form-group input,
 .form-group select,
-.form-group textarea{
-    padding:15px;
-    border:1px solid #DDE8E3;
-    border-radius:8px;
-    font-size:1rem;
-    background:#FAF8F2;
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid #DDE8E3;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #FAF8F2;
 }
 
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus{
-    outline:none;
-    border-color:#E9826E;
+.form-group textarea:focus {
+    outline: none;
+    border-color: #E9826E;
 }
 
-.radio-group{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* ===================================
+
+/* 
+   FIND YOUR TUTOR PAGE
    FILTERS
-=================================== */
+ */
 
-.filters-section{
-    padding:70px 8% 30px;
+.filters-section {
+    padding: 70px 8% 30px;
 }
 
-.filters{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.filter-box{
-    display:flex;
-    flex-direction:column;
+.filter-box {
+    display: flex;
+    flex-direction: column;
 }
 
-.filter-box label{
-    margin-bottom:8px;
-    font-weight:bold;
+.filter-box label {
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
-.filter-box select{
-    padding:14px;
-    border-radius:8px;
-    border:1px solid #DDE8E3;
-    background:#FFFFFF;
+.filter-box select {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #DDE8E3;
+    background: #FFFFFF;
 }
 
-/* ===================================
-   TUTORS GRID
-=================================== */
 
-.tutors-section{
-    padding:50px 8% 90px;
+/*  
+   FIND YOUR TUTOR PAGE
+   MAIN GRID AREAS LAYOUT
+  */
+
+.tutors-page-layout {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 280px minmax(0, 1fr);
+
+    grid-template-areas:
+        "header header"
+        "hero hero"
+        "sidebar main"
+        "footer footer";
 }
 
-.tutors-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+
+/*  
+   FIND YOUR TUTOR PAGE
+   HEADER
+  */
+
+.tutors-page-layout .site-header {
+    grid-area: header;
 }
 
-.tutor-card{
-    background:#FFFFFF;
-    border:1px solid #DDE8E3;
-    border-radius:14px;
-    overflow:hidden;
-    transition:.3s;
+
+/* 
+   FIND YOUR TUTOR PAGE
+   HERO
+ */
+
+.tutors-page-layout .tutors-hero {
+    grid-area: hero;
+
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 70px 8%;
+
+    background-color: #30302C;
+    border-bottom: 1px solid #DDE8E3;
 }
 
-.tutor-card:hover{
-    transform:translateY(-5px);
-    border-color:#E9826E;
-    box-shadow:0 12px 25px rgba(48,48,44,.08);
+.tutors-hero .section-label {
+    margin-bottom: 15px;
+
+    color: #8FD8C8;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.tutor-photo{
-    width:100%;
-    height:260px;
-    object-fit:cover;
+.tutors-hero h1 {
+    margin-bottom: 20px;
+
+    color: #FFFFFF;
+
+    font-size: 6rem;
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
-.tutor-info{
-    padding:25px;
+.tutors-hero p:not(.section-label) {
+    max-width: 700px;
+
+    margin-bottom: 0;
+
+    color: #DDE8E3;
+
+    font-size: 1.3rem;
+    line-height: 1.6;
 }
 
-.subject-tag{
-    display:inline-block;
-    background:#F8D978;
-    color:#30302C;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:.85rem;
-    font-weight:bold;
-    margin-bottom:15px;
+
+/*  
+   FIND YOUR TUTOR PAGE
+   SIDEBAR
+  */
+
+.tutors-page-layout .tutors-sidebar {
+    grid-area: sidebar;
+
+    padding: 50px 28px;
+
+    background-color: #FFFFFF;
+
+    border-right: 1px solid #DDE8E3;
 }
 
-.rating{
-    color:#E9826E;
-    font-weight:bold;
+.sidebar-content {
+    position: sticky;
+    top: 30px;
 }
 
-.tutor-info ul{
-    padding-left:20px;
-    color:#706E67;
+.tutors-sidebar .section-label {
+    margin-bottom: 10px;
+
+    color: #E9826E;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.tutor-info .button{
-    margin-top:20px;
-    display:inline-block;
+.tutors-sidebar h2 {
+    margin-bottom: 12px;
+
+    color: #30302C;
+
+    font-size: 1.8rem;
 }
 
-/* ===================================
+.sidebar-description {
+    margin-bottom: 35px;
+
+    color: #706E67;
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   SIDEBAR FILTERS
+  */
+
+.tutors-sidebar .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tutors-sidebar .filter-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tutors-sidebar .filter-box label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #30302C;
+
+    font-weight: bold;
+}
+
+.tutors-sidebar .ui-icon {
+    color: #E9826E;
+}
+
+.tutors-sidebar select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #DDE8E3;
+    border-radius: 8px;
+
+    background-color: #FAF8F2;
+
+    color: #30302C;
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.tutors-sidebar select:focus {
+    outline: none;
+
+    border-color: #E9826E;
+
+    box-shadow: 0 0 0 3px rgba(233, 130, 110, 0.15);
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   MAIN
+  */
+
+.tutors-page-layout .tutors-main {
+    grid-area: main;
+
+    min-width: 0;
+
+    background-color: #FAF8F2;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR SECTION
+  */
+
+.tutors-section {
+    padding: 55px 6% 90px;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR CARDS
+  */
+
+.tutors-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   INDIVIDUAL TUTOR CARD
+  */
+
+.tutor-card {
+    position: relative;
+
+    flex: 1 1 280px;
+
+    max-width: 350px;
+
+    padding: 25px 22px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #DDE8E3;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 10px rgba(48, 48, 44, 0.04);
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "photo"
+        "tag"
+        "name"
+        "rating"
+        "bio"
+        "list"
+        "btn";
+
+    row-gap: 11px;
+
+    justify-items: center;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.tutor-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #E9826E;
+
+    box-shadow: 0 12px 25px rgba(48, 48, 44, 0.08);
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR PHOTO
+  */
+
+.tutor-photo {
+    grid-area: photo;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: none;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR LANGUAGE
+  */
+
+.tutor-card .subject-tag {
+    grid-area: tag;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+    padding: 6px 14px;
+
+    background-color: #F8D978;
+
+    color: #30302C;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR NAME
+  */
+
+.tutor-name {
+    grid-area: name;
+
+    margin: 0;
+
+    color: #30302C;
+
+    font-size: 1.2rem;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR RATING
+  */
+
+.tutor-card .rating {
+    grid-area: rating;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin: 0;
+
+    color: #8F4542;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+}
+
+.star-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR DESCRIPTION
+  */
+
+.tutor-bio {
+    grid-area: bio;
+
+    margin: 0;
+
+    color: #706E67;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR DETAILS
+  */
+
+.tutor-details {
+    grid-area: list;
+
+    width: 100%;
+
+    margin: 5px 0;
+
+    padding: 13px 16px;
+
+    list-style: none;
+
+    background-color: #FAF8F2;
+
+    border: 1px solid #DDE8E3;
+
+    border-radius: 9px;
+
+    color: #706E67;
+
+    font-size: 0.82rem;
+
+    text-align: left;
+}
+
+.tutor-details li {
+    margin-bottom: 6px;
+}
+
+.tutor-details li:last-child {
+    margin-bottom: 0;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   TUTOR BUTTON
+  */
+
+.tutor-btn {
+    grid-area: btn;
+
+    width: 100%;
+
+    padding: 11px 18px;
+
+    text-align: center;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
+   FOOTER
+  */
+
+.tutors-page-layout .site-footer {
+    grid-area: footer;
+
+    padding: 30px 8%;
+
+    background-color: #30302C;
+
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 5px;
+
+    color: #DDE8E3;
+}
+
+
+/*  
+   FIND YOUR TUTOR PAGE
    RESPONSIVE
-=================================== */
+  */
 
-@media (max-width:900px){
+@media (max-width: 1000px) {
+
+    .tutors-page-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+
+    .tutors-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .tutor-card {
+        flex: 1 1 260px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .tutors-page-layout {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "header"
+            "hero"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .tutors-page-layout .tutors-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #DDE8E3;
+    }
+
+    .sidebar-content {
+        position: static;
+    }
+
+    .tutors-sidebar .filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tutors-sidebar .filter-box {
+        flex: 1 1 200px;
+    }
+
+    .tutors-hero {
+        min-height: 380px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .tutors-hero {
+        min-height: 350px;
+        padding: 55px 6% 45px;
+    }
+
+    .tutors-hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .tutors-section {
+        padding: 40px 6% 70px;
+    }
+
+    .tutor-card {
+        max-width: none;
+        flex: 1 1 100%;
+    }
+
+    .tutors-sidebar {
+        padding: 35px 6%;
+    }
+
+    .tutors-sidebar .filters {
+        flex-direction: column;
+    }
+}
+
+
+/*  
+   BECOME A TUTOR / FIND YOUR TUTOR
+   GENERAL RESPONSIVE
+  */
+
+@media (max-width: 900px) {
 
     .requirements-content,
     .form-grid,
-    .filters{
-        grid-template-columns:1fr;
+    .filters {
+        grid-template-columns: 1fr;
     }
 
-    .page-hero h1{
-        font-size:3rem;
+    .page-hero h1 {
+        font-size: 3rem;
     }
 }
 
-/* Language tags on tutor cards */
 
-.subject-tag{
-    display:inline-block;
-    background:#F8D978;
-    color:#30302C;
-    padding:6px 14px;
-    border-radius:20px;
-    font-size:.85rem;
-    font-weight:bold;
-    margin-bottom:15px;
-    letter-spacing:.5px;
+/*  
+   FIND YOUR TUTOR PAGE
+   LANGUAGE TAGS
+  */
+
+.subject-tag {
+    display: inline-block;
+    background: #F8D978;
+    color: #30302C;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: .85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: .5px;
 }
 
-.rating{
-    color:#E9826E;
-    font-weight:bold;
-    margin:10px 0;
+.rating {
+    color: #E9826E;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-.requirements-list li::marker{
-    color:#E9826E;
+.requirements-list li::marker {
+    color: #E9826E;
 }
 
-/* Выравнивание иконок по базовой линии */
-.rating, .filter-box label {
+
+/*  
+   ALL PAGES
+   ICON ALIGNMENT
+  */
+
+.rating,
+.filter-box label {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -1471,16 +2071,21 @@ tr:hover td {
 }
 
 
+/*  
+   ABOUT / TEAM PAGE
+   TEAM SECTION
+  */
 
-/* Team section */
 .team-section {
     max-width: 1250px;
     margin: 0 auto;
     padding: 90px 8% 110px;
+    text-align: center;
 }
 
 .team-section .section-label {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .team-section h2 {
@@ -1488,27 +2093,34 @@ tr:hover td {
     color: #30302C;
     font-size: 3rem;
     line-height: 1.15;
+    text-align: center;
 }
 
 .team-section .about-description {
+    text-align: center;
     max-width: 700px;
-    margin: 0 0 45px;
+    margin: 0 auto 55px;
     color: #706E67;
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
-/* Team cards */
+
+/*  
+   ABOUT / TEAM PAGE
+   TEAM CARDS
+  */
+
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 32px;
     align-items: stretch;
 }
 
 .team-card {
-    width: 100%;
-    box-sizing: border-box;
+    flex: 1 1 450px;
+    min-width: 0;
     padding: 35px;
     background-color: #FFFFFF;
     border: 1px solid #DDE8E3;
@@ -1517,7 +2129,12 @@ tr:hover td {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile photos */
+
+/*  
+   ABOUT / TEAM PAGE
+   PROFILE PHOTOS
+  */
+
 .round-imageus {
     width: 220px;
     height: 220px;
@@ -1536,7 +2153,7 @@ tr:hover td {
 .subject-tag {
     display: inline-block;
     margin-bottom: 18px;
-    color: #E9826E;
+    color: #8F4542;
     font-size: 0.9rem;
     font-weight: bold;
 }
@@ -1566,8 +2183,14 @@ tr:hover td {
     margin-bottom: 8px;
 }
 
-/* Responsive */
+
+/*  
+   ABOUT / TEAM PAGE
+   RESPONSIVE
+  */
+
 @media (max-width: 800px) {
+
     .team-grid {
         grid-template-columns: 1fr;
     }
@@ -1578,6 +2201,7 @@ tr:hover td {
 }
 
 @media (max-width: 500px) {
+
     .team-section {
         padding: 70px 6% 80px;
     }
